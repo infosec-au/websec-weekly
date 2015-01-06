@@ -8,3 +8,5 @@ At the moment, there are two main managers which distribute the information coll
 ![](https://i.imgur.com/115cMGU.png)
 2. HipChat notifications which are sent to HipChat @ 9AM and 9PM of every day (for the more hardcore enthusiasts).
 ![](https://i.imgur.com/pC9LbqM.png)
+
+Read more about the motivation behind creating this over [here](https://shubh.am/introducing-websec-weekly/).
