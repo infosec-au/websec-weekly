@@ -1,0 +1,1 @@
+The KimonoLabs API keys exposed in this folder, in all of the python files are NOT sensitive.
