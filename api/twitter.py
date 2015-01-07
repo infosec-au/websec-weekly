@@ -39,11 +39,17 @@ def push_new(tweeter_name, tweeter_href, tweet_href, summary, display_pic):
 
 data = grab_data()
 
-for i in data['results']['collection1']:
-	tweeter_name = i['name']['text']
-	tweeter_href = i['name']['href']
-	tweet_href = i['time']['href']
-	summary = i['summary']['text']
-	display_pic = i['display_pic']['src']
-	if check_if_new(i['summary']['text']) == True:
-		print push_new(tweeter_name, tweeter_href, tweet_href, summary, display_pic)
+# Temporary fix to adapt with current KimonoLabs API
+# The following removes twitter status permalinks from email since they are no longer available.
+
+try:
+	for i in data['results']['collection1']:
+		tweeter_name = i['name']
+		tweeter_href = "https://twitter.com/" + i['twitter_handle']
+		tweet_href = tweeter_href
+		summary = i['summary']
+		display_pic = i['display_pic']['src']
+		if check_if_new(i['summary']) == True:
+			print push_new(tweeter_name, tweeter_href, tweet_href, summary, display_pic)
+except Exception as e:
+	print e

@@ -38,6 +38,9 @@ def push_new(company_name, href):
 
 data = grab_data()
 
-for i in data['results']['collection1']:
-	if check_if_new(i['company']['text']) == True:
-		print push_new(i['company']['text'], i['company']['href'])
+try:
+	for i in data['results']['collection1']:
+		if check_if_new(i['company']) == True:
+			print push_new(i['company'])
+except Exception as e:
+	print e

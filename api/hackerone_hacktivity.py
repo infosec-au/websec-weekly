@@ -40,13 +40,16 @@ def push_new(company, company_href, hunter, hunter_href, bounty, time_ago, time_
 
 data = grab_data()
 
-for i in data['results']['collection1']:
-	company = i['company']['text']
-	company_href = i['company']['href']
-	hunter = i['hunter']['text']
-	hunter_href = i['hunter']['href']
-	bounty = i['bounty']
-	time_ago = i['time_ago']['text']
-	time_ago_href = i['time_ago']['href']
-	if check_if_new(time_ago_href) == True:
-		print push_new(company, company_href, hunter, hunter_href, bounty, time_ago, time_ago_href)
+try:
+	for i in data['results']['collection1']:
+		company = i['company']['text']
+		company_href = i['company']['href']
+		hunter = i['hunter']['text']
+		hunter_href = i['hunter']['href']
+		bounty = i['bounty']
+		time_ago = i['time_ago']['text']
+		time_ago_href = i['time_ago']['href']
+		if check_if_new(time_ago_href) == True:
+			print push_new(company, company_href, hunter, hunter_href, bounty, time_ago, time_ago_href)
+except Exception as e:
+	print e

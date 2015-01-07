@@ -39,12 +39,15 @@ def push_new(company, company_href, new, swag, reward, hall_of_fame):
 
 data = grab_data()
 
-for i in data['results']['collection1']:
-	company = i['company']['text']
-	company_href = i['company']['href']
-	new = i['new']
-	swag = i['swag']
-	reward = i['reward']
-	hall_of_fame = i['hall_of_fame']
-	if check_if_new(i['company']['text']) == True:
-		print push_new(company, company_href, new, swag, reward, hall_of_fame)
+try:
+	for i in data['results']['collection1']:
+		company = i['company']['text']
+		company_href = i['company']['href']
+		new = i['new']
+		swag = i['swag']
+		reward = i['reward']
+		hall_of_fame = i['hall_of_fame']
+		if check_if_new(i['company']['text']) == True:
+			print push_new(company, company_href, new, swag, reward, hall_of_fame)
+except Exception as e:
+	print e

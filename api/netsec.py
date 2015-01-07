@@ -39,14 +39,17 @@ def push_new(name, href, author, author_href, rep, comment_count, comment_href, 
 
 data = grab_data()
 
-for i in data['results']['collection1']:
-	name = i['name']['text']
-	href = i['name']['href']
-	author = i['author']['text']
-	author_href = i['author']['href']
-	rep = i['rep']
-	comment_count = i['comments']['text']
-	comment_href = i['comments']['href']
-	domain = i['link']['text']
-	if check_if_new(i['name']['href']) == True:
-		print push_new(name, href, author, author_href, rep, comment_count, comment_href, domain)
+try:
+	for i in data['results']['collection1']:
+		name = i['name']['text']
+		href = i['name']['href']
+		author = i['author']['text']
+		author_href = i['author']['href']
+		rep = i['rep']
+		comment_count = i['comments']['text']
+		comment_href = i['comments']['href']
+		domain = i['link']['text']
+		if check_if_new(i['name']['href']) == True:
+			print push_new(name, href, author, author_href, rep, comment_count, comment_href, domain)
+except Exception as e:
+	print e

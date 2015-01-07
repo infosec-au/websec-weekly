@@ -38,10 +38,13 @@ def push_new(title, link, date, description):
 
 data = grab_data()
 
-for i in data['results']['collection1']:
-	title = i['title']['text']
-	link = i['title']['href']
-	date = i['date']
-	description = i['description']['text']
-	if check_if_new(i['title']['text']) == True:
-		print push_new(title, link, date, description)
+try:
+	for i in data['results']['collection1']:
+		title = i['title']['text']
+		link = i['title']['href']
+		date = i['date']
+		description = i['description']
+		if check_if_new(i['title']['text']) == True:
+			print push_new(title, link, date, description)
+except Exception as e:
+	print e

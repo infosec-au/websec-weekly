@@ -40,13 +40,16 @@ def push_new(company, company_href, reporter, reporter_href, date, disclosed_nam
 
 data = grab_data()
 
-for i in data['results']['collection1']:
-	company = i['company']['text']
-	company_href = i['company']['href']
-	reporter = i['reporter']['text']
-	reporter_href = i['reporter']['href']
-	date = i['date']
-	disclosed_name = i['disclosed_href']['text']
-	disclosed_href = i['disclosed_href']['href']
-	if check_if_new(disclosed_href) == True:
-		print push_new(company, company_href, reporter, reporter_href, date, disclosed_name, disclosed_href)
+try:
+	for i in data['results']['collection1']:
+		company = i['company']['text']
+		company_href = i['company']['href']
+		reporter = i['reporter']['text']
+		reporter_href = i['reporter']['href']
+		date = i['date']
+		disclosed_name = i['disclosed_href']['text']
+		disclosed_href = i['disclosed_href']['href']
+		if check_if_new(disclosed_href) == True:
+			print push_new(company, company_href, reporter, reporter_href, date, disclosed_name, disclosed_href)
+except Exception as e:
+	print e			
