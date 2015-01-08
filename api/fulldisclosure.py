@@ -43,7 +43,7 @@ try:
 		title = i['title']['text']
 		link = i['title']['href']
 		date = i['date']
-		description = i['description']
+		description = i['description']['text']
 		if check_if_new(i['title']['text']) == True:
 			print push_new(title, link, date, description)
 except Exception as e:

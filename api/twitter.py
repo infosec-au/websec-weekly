@@ -44,12 +44,12 @@ data = grab_data()
 
 try:
 	for i in data['results']['collection1']:
-		tweeter_name = i['name']
-		tweeter_href = "https://twitter.com/" + i['twitter_handle']
-		tweet_href = tweeter_href
-		summary = i['summary']
+		tweeter_name = i['name']['text']
+		tweeter_href = i['name']['href']
+		tweet_href = i['time']['href']
+		summary = i['summary']['text']
 		display_pic = i['display_pic']['src']
-		if check_if_new(i['summary']) == True:
+		if check_if_new(i['summary']['text']) == True:
 			print push_new(tweeter_name, tweeter_href, tweet_href, summary, display_pic)
 except Exception as e:
 	print e

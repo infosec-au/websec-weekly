@@ -40,7 +40,7 @@ data = grab_data()
 
 try:
 	for i in data['results']['collection1']:
-		if check_if_new(i['company']) == True:
-			print push_new(i['company'])
+		if check_if_new(i['company']['text']) == True:
+			print push_new(i['company']['text'], i['company']['href'])
 except Exception as e:
 	print e
