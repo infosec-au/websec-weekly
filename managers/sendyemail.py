@@ -28,7 +28,7 @@ fulldisclosure_range = list(range(0,7))
 hackerone_c_range = list(range(0,7))
 hackerone_hacktivity_range = list(range(0,5))
 hackerone_public_range = list(range(0,10))
-netsec_range = 10
+netsec_range = 8
 stackoverflow_range = 7
 twitter_range = list(range(0,3))
 
