@@ -1,0 +1,233 @@
+.bitfont {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 36px;
+	line-height: 44px;
+	color: white;
+}
+.bitfont-small {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 16px;
+	line-height: 4px;
+	color: white;
+}
+.circular-outline {
+	border-radius: 16px;
+	border-style: solid;
+	border-color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 15px;
+	margin-bottom: 15px;
+	margin-top: 50px;
+}
+.bg-black {
+	height: 100vh;
+	background-color: #000 !important;
+}
+.bg-light-black {
+	background-color: #2c3e50;
+}
+.bg-light-light-black {
+	background-color: #1F3641;
+}
+.bg-super-light-black {
+	background-color: #3D454E;
+}
+.colourishard {
+	background-color: #3A3C42;
+}
+.marginextra {
+	margin-bottom: 50px;
+}
+/* StackOverflow CSS3 Bounce */
+.bounce {
+  position:relative;
+  -webkit-animation:bounce 1s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom:3px; }
+  25%, 75% { bottom:11px; }
+  50%      { bottom:14px; }
+  100%     {bottom:0;}
+}
+
+#imageWrapper {
+	position: relative;
+	height: 100px !important;
+}
+
+#bottomImage {
+	position: absolute;
+	bottom: 0;
+	left:0;
+	right: 0;
+	text-align:center;
+	margin: 0 auto;
+	height: 65%;
+}
+
+.center {
+	text-align:center;
+	margin:0 auto;
+}
+.up {
+	margin-top:50px;
+}
+.bodytext {
+	font-family: 'Droid Sans', sans-serif;
+	color: white;
+	font-size: 22px;
+}
+.bodytext-modal {
+	font-family: 'Lato', sans-serif;
+	color: #A1A3A6;
+	font-size: 40px;
+	padding-left:10px;
+	display: inline-block;
+}
+.bodytext-small {
+	font-family: 'Droid Sans', sans-serif;
+	color: white;
+	font-size: 18px;
+	width: 55%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.bodytext-small-small {
+	font-family: 'Droid Sans', sans-serif;
+	color: white;
+	font-size: 16px;
+	width: 55%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.bodytext-super-small {
+	font-family: 'Droid Sans', sans-serif;
+	color: white;
+	font-size: 14px;
+	width: 55%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.btexts {
+	font-family: 'Droid Sans', sans-serif;
+	color: white;
+	font-size: 12px;
+}
+.curvededges {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.shadow {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-box-shadow: 6px 0px 19px 0px rgba(0,0,0,0.8);
+	-moz-box-shadow: 6px 0px 19px 0px rgba(0,0,0,0.8);
+	box-shadow: 6px 0px 19px 0px rgba(0,0,0,0.8);
+}
+#bottomImageLarge {
+	position: absolute;
+	float:left;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: 0 auto;
+	height: 75%;
+}
+.small {
+	height: 190px;
+	width: auto;
+}
+.tall {
+	height: 300px;
+}
+.middle {
+	margin-top:100px;
+}
+.big-img {
+	width:500px;
+}
+.tall-s {
+	height: 400px;
+}
+.tall-s-s {
+	height: 300px;
+}
+.curvededges-small-right {
+	border-radius: 5px;
+}
+a.hoverlink:hover {
+	color: white;
+	border-bottom: 3px solid
+}
+.black {
+	background-color: black;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 10px;
+	margin-right: 4px;
+}
+.bbg {
+	background-color: black;
+}
+mark {
+	background-color: #8996A8;
+	padding: 5px;
+	border-radius: 2px;
+	color:white;
+}
+.downie {
+	display: block;
+	margin-top: 15px;
+}
+.inline {
+	display: inline;
+}
+.pad {
+	padding-top:15px;
+}
+.right {
+	margin-left: 50%;
+};
+.hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    color:white;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.uk-nav-side > li > a:hover,
+.uk-nav-side > li > a:focus {
+  background: rgba(0, 0, 0, 0.05);
+  color: #444444;
+  /* 2 */
+  outline: none;
+}
+/* Active */
+.uk-nav-side > li.uk-active-sq > a {
+  background: black;
+  color: white;
+}
+.uk-list-line > li:nth-child(n+2) {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #535F6A !important;
+}
+.lolcolour {
+	background-color: #0C5B77;
+}
+.inline {
+	display: inline !important;
+}
+.inline > a:hover {
+	color: white;
+}
