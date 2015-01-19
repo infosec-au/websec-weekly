@@ -44,7 +44,7 @@ try:
 		link = i['title']['href']
 		date = i['date']
 		description = i['description']['text']
-		if "Vulnerability Laboratory" or "Vulnerability Lab" or "VL-ID" or "vulnerability-lab" in description:
+		if "Vulnerability Laboratory" in description or "Vulnerability Lab" in description or "VL-ID" in description or "vulnerability-lab" in description:
 			print "DANGER do not include in WSW!111!!11"
 		elif check_if_new(title) == True:
 			print push_new(title, link, date, description)
