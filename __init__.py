@@ -39,18 +39,19 @@ def unsub_view():
 def recent_feed():
     feed = AtomFeed('Recent Websecweekly Releases',
                     feed_url=request.url, url=request.url_root)
-    articles = get_articles() #Article.query.order_by(Article.pub_date.desc()).limit(15).all()
+    articles = get_articles()
     for article in articles:
         soup = BeautifulSoup(article.read())
         rendered_text = html2text.html2text(article.read())
-        title = article.name
-        time_pub = repr(modification_date(os.path.dirname(os.path.realpath(__file__)) + "/" + article.name))
+        time_pub = eval(repr(modification_date(os.path.dirname(os.path.realpath(__file__)) + "/" + article.name)))
+        title = "Websecweekly " + time_pub.strftime("%d-%m-%Y")
         feed.add(title, unicode(rendered_text),
                  content_type='html',
+                 generator=("Websecweekly", "https://websecweekly.org", None),
                  author="Websecweekly",
                  url=make_external(article.name),
-                 updated=eval(time_pub),
-                 published=eval(time_pub))
+                 updated=time_pub,
+                 published=time_pub)
     return feed.get_response()
 
 if __name__ == "__main__":
