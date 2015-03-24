@@ -29,7 +29,6 @@ def modification_date(filename):
 def index():
     get_articles()
     return render_template("index.html")
-    
 
 @app.route("/unsubscribe")
 def unsub_view():
@@ -37,22 +36,25 @@ def unsub_view():
 
 @app.route('/recent.atom')
 def recent_feed():
-    feed = AtomFeed('Recent Websecweekly Releases',
-                    feed_url=request.url, url=request.url_root)
-    articles = get_articles()
-    for article in articles:
-        soup = BeautifulSoup(article.read())
-        rendered_text = html2text.html2text(article.read())
-        time_pub = eval(repr(modification_date(os.path.dirname(os.path.realpath(__file__)) + "/" + article.name)))
-        title = "Websecweekly " + time_pub.strftime("%d-%m-%Y")
-        feed.add(title, unicode(rendered_text),
-                 content_type='html',
-                 generator=("Websecweekly", "https://websecweekly.org", None),
-                 author="Websecweekly",
-                 url=make_external(article.name),
-                 updated=time_pub,
-                 published=time_pub)
-    return feed.get_response()
+    try:
+        feed = AtomFeed('Recent Websecweekly Releases',
+                        feed_url=request.url, url=request.url_root)
+        articles = get_articles()
+        for article in articles:
+            soup = BeautifulSoup(article.read())
+            rendered_text = html2text.html2text(article.read())
+            time_pub = eval(repr(modification_date(os.path.dirname(os.path.realpath(__file__)) + "/" + article.name)))
+            title = "Websecweekly " + time_pub.strftime("%d-%m-%Y")
+            feed.add(title, unicode(rendered_text),
+                     content_type='html',
+                     generator=("Websecweekly", "https://websecweekly.org", None),
+                     author="Websecweekly",
+                     url=make_external(article.name),
+                     updated=time_pub,
+                     published=time_pub)
+        return feed.get_response()
+    except Exception as e:
+        return str(e)
 
 if __name__ == "__main__":
     app.run()
